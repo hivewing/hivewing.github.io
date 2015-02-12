@@ -1,12 +1,12 @@
 /* Link colour */
 a {
-    color: #d35c5c;
+    color: #00a67C;
 }
 
 /* Border at the top of the page */
 body>header,
 body.noimage {
-    border-color: #d35c5c;
+    border-color: #00a67C;
 }
 .hivewing-navbar {
   background: #d35c5c;
