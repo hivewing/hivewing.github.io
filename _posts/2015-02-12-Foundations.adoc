@@ -32,5 +32,6 @@ graph TD;
     WorkerProcess1
     WorkerProcess2
     WorkerProcess3
+  end
 </div>
 ++++
