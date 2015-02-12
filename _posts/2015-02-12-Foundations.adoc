@@ -20,3 +20,15 @@ graph TD;
     Process
 </div>
 ++++
+
+
+== Worker Process Manager
+Someone needs to manage all these processes.  Starting them up and making sure they stay up.  Additionally, when you have a new version of a process that needs to get deployed, the worker process manager will gracefully shutdown  the processes, and spin up the new processes.  
+
+++++
+<div class='mermaid'>
+graph TD;
+    WorkerProcessManager<-->WorkerProcess1
+    WorkerProcessManager<-->WorkerProcess2
+</div>
+++++
