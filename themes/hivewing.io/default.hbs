@@ -17,10 +17,11 @@
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Dosis:400,700,400italic,700italic|Roboto+Slab:400italic,700italic,700,400">
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-    <script src='https://cdn.rawgit.com/knsv/mermaid/0.3.0/dist/mermaid.full.js'></script>
+    <script src='https://cdn.rawgit.com/knsv/mermaid/0.3.3/dist/mermaid.full.js'></script>
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
+
 <body class="{{body_class}} {{#is 'index, tag, author'}}user{{/is}} {{#is 'post'}}{{#unless post.image}}noimage{{/unless}}{{/is}}">
     <nav class="hivewing-navbar">
       <div class='hivewing-page-placeholder'>
@@ -30,6 +31,7 @@
         </a>
       </div>
     </nav>
+
     {{! Everything else gets inserted here }}
     {{{body}}}
 
