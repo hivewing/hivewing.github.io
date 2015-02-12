@@ -1,3 +1,18 @@
 = First Blog Post
 
-Hello! This is my learning Asciidog.  link:https://github.com/HubPress/hubpress.io[Hubpages.io] rocks, no?
+Hello! This is my learning Asciidoc. 
+
+link:https://github.com/HubPress/hubpress.io[Hubpages.io] rocks, no?
+
+NOTE: Hivewing.io is here to help with all the nittly grittly bits of deploying devices and managing them remotely
+
+We are more of a platform than a single service. We can update binaries remotely, let you ssh in remotely, even do configuration and data collection.
+
+TIP: Since we're a platform, if all you wanted, was to expose ports publicly for your remote devices, then that's fine too.
+
+
+== Some Definitions
+One can't get too far down the road without laying a foundation.  As we have heard, it's better to build upon a solid rock, than on shifting sand. So let us solidify what we're talking about, ok?
+
+Apiary:: The apiary is where all of your hives and workers are grouped.  
+Hive:: 
