@@ -25,6 +25,11 @@ body.noimage {
 .hivewing-navbar > a {
   color: white;
   position: relative;
+  font-family: "Dosis";
+}
+.hivewing-navbar > a > span {
+  position: absolute;
+  z-index: 1;
 }
 
 .hexagon-xs:before, .hexagon-xs:after {
