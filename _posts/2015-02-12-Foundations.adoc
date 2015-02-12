@@ -29,6 +29,10 @@ Someone needs to manage all these processes.  Starting them up and making sure t
 <div class='mermaid'>
 graph TB
   Worker1
+  subgraph two
+    A
+    B
+  end
 </div>
 ++++
 ABC
