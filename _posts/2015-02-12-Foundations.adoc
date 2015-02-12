@@ -15,6 +15,6 @@ It all starts here. Hivewing is built upon processes. Good ol' basic processes l
 ++++
 <div class='mermaid'>
 graph WorkerProcess;
-    Process --> Hivewing
+    Process-->Hivewing
 </div>
 ++++
