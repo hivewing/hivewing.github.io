@@ -3,11 +3,16 @@
 
 First off - link:https://github.com/HubPress/hubpress.io[Hubpages.io] rocks, no?
 
-Hivewing.io is here to help with all the nittly grittly bits of deploying processes on devices and managing them remotely
+Hivewing.io is here to help with all the nittly grittly bits of deploying processes on devices and managing them remotely.
 
-We are more of a platform than a single service. We can update binaries remotely, let you ssh in remotely, even do configuration and data collection. And since we're a platform, if only want some of the awesomeness - feel free to pick and choose.
+We are a platform you build your product on top of.  Similar to AWS or Heroku, and even some similarity to AWS Elastic Beanstalk.  We can update binaries remotely, let you reverse tunnel things (like ssh), even do configuration and data collection. And since we're a platform, if you only want some of the awesomeness - feel free to pick and choose what best suits your needs.
 
+== Introductions
+It is probably polite to get to know each other before we jump into personal details. 
+[verse]
+Hivewing, meet <you>.
 
+<you>
 == Some Definitions
 One can't get too far down the road without laying a foundation.  As we have heard, it's better to build upon a solid rock, than on shifting sand. So let us solidify what we're talking about, ok?
 
