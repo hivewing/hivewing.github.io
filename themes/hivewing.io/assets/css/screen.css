@@ -27,12 +27,13 @@ body.noimage {
   position: relative;
   font-family: "Dosis";
   top: 12.5px;
-  left: 25px;
+  left: 65px;
 }
 .hivewing-navbar > a > span {
   position: absolute;
   z-index: 1;
   top: -12.5px;
+  font-weight: 700;
 }
 
 .hexagon-xs:before, .hexagon-xs:after {
