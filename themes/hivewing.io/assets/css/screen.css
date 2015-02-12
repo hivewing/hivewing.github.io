@@ -20,14 +20,13 @@ body.noimage {
   left: 0;
   right: 0;
   top: 0;
+  margin-top: 0px;
 }
 
 .hivewing-navbar > a {
   color: white;
   position: relative;
   font-family: "Dosis";
-  top: 12.5px;
-  left: 65px;
 }
 .hivewing-navbar > a > span {
   position: absolute;
