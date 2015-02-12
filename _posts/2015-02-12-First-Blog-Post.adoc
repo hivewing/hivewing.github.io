@@ -14,6 +14,9 @@ One can't get too far down the road without laying a foundation.  As we have hea
 
 === Worker Process
 It all starts here. Hivewing is built upon processes. Good ol' basic processes like you would run from the command line.  We could have tried to abstract things a bit more - and had you run some javascript in our container, or maybe had you write some http server code.  But we like the foundation of managing processes.  When you write code to have it run on your distributed devices, the process is where it starts.  Hivewing is really an infrastructure to run (and keep running) processes on distributed hosts.  It adds on a lot of other helpful tools, but that is the core mission.
-
-Apiary:: The apiary is where all of your hives and workers are grouped.  
-Hive:: T
+++++
+<div class='mermaid'>
+graph WorkerProcess;
+    Process --> Hivewing
+</div>
+++++
