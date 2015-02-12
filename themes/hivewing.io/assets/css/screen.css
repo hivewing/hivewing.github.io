@@ -9,10 +9,22 @@ body.noimage {
     border-color: #00a67C;
 }
 .hivewing-navbar {
-  background: #d35c5c;
+  background: #00a67C;
   line-height: 50px;
   font-size: 18px;
   color: white;
+  text-align: left;
+  padding-left: 30px;
+  position: absolute;
+  height: 50px;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.hivewing-navbar > a {
+  color: white;
+  position: relative;
 }
 
 .hexagon-xs:before, .hexagon-xs:after {
@@ -41,10 +53,10 @@ body.noimage {
   margin: 11px 0;
   font-size: 15.399999999999999px;
   text-align: center;
-  left: 0px;
+  left: -10px;
   position: absolute;
   z-index: 0;
-  top: 3px;
+  top: -10px;
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
