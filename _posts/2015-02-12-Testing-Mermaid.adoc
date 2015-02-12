@@ -1,4 +1,8 @@
 = Testing Mermaid
+
+Here is a test for a mermaid subgraph.
+
+
 ++++
 <div class='mermaid'>
 graph TB
