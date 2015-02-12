@@ -6,7 +6,7 @@ Here is a test for a mermaid subgraph.
 ++++
 <div class='mermaid'>
 graph TB
-         subgraph one
+         subgraph hivewingprocess
          a1-->a2
          end
          subgraph two
