@@ -28,11 +28,9 @@ Someone needs to manage all these processes.  Starting them up and making sure t
 ++++
 <div class='mermaid'>
 graph TB;
-subgraph a;
-WorkerProcess1;
-WorkerProcess2;
-WorkerProcess3;
-end;
+subgraph a
+a---WorkerProcess1;
+end
 
 </div>
 ++++
