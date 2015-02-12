@@ -1,9 +1,7 @@
 
 = Foundations
 
-Hello! This is my learning Asciidoc. 
-
-link:https://github.com/HubPress/hubpress.io[Hubpages.io] rocks, no?
+First off - link:https://github.com/HubPress/hubpress.io[Hubpages.io] rocks, no?
 
 Hivewing.io is here to help with all the nittly grittly bits of deploying processes on devices and managing them remotely
 
