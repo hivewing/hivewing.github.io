@@ -22,11 +22,13 @@
     {{ghost_head}}
 </head>
 <body class="{{body_class}} {{#is 'index, tag, author'}}user{{/is}} {{#is 'post'}}{{#unless post.image}}noimage{{/unless}}{{/is}}">
-    <article class="hivewing-navbar">
-      <a class="navbar-brand" href="http://www.hivewing.io">
-        <span>Hivewing.io</span>
-        <div class="hexagon-xs">&nbsp;</div>
-      </a>
+    <nav class="hivewing-navbar">
+      <article>
+        <a class="navbar-brand" href="http://www.hivewing.io">
+          <span>Hivewing.io</span>
+          <div class="hexagon-xs">&nbsp;</div>
+        </a>
+      </article>
     </nav>
     {{! Everything else gets inserted here }}
     {{{body}}}

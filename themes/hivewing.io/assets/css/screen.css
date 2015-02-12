@@ -23,12 +23,12 @@ body.noimage {
   margin-top: 0px;
 }
 
-.hivewing-navbar > a {
+.hivewing-navbar a {
   color: white;
   position: relative;
   font-family: "Dosis";
 }
-.hivewing-navbar > a > span {
+.hivewing-navbar a > span {
   position: absolute;
   z-index: 1;
   top: -12.5px;
