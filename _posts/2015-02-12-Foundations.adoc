@@ -27,7 +27,7 @@ Someone needs to manage all these processes.  Starting them up and making sure t
 
 ++++
 <div class='mermaid'>
-graph TD;
+  graph TB;
   subgraph one;
     WorkerProcess1;
     WorkerProcess2;
