@@ -16,6 +16,9 @@ nav {
   color: white;
   margin-bottom: 25px;
 }
+.pagination-content {
+  padding: 10px;
+}
 
 .hivewing-navbar {
   line-height: 50px;
@@ -1082,8 +1085,9 @@ body>footer #btn_feed, .post-footer #btn_feed {
     text-align: center;
     font-size: 16px;
     background-color: #fff;
-    border: 1px solid #ededee;
-    color: #909396;
+    /*border: 1px solid #ededee; */
+    border: 1px solid #00a67c;
+    color: #00a67C;
     padding: 9px 9px 7px 10px;
     font-weight: normal
 }
