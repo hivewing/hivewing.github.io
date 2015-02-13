@@ -26,7 +26,7 @@ graph TD;
 Someone needs to manage all these processes.  Starting them up and making sure they stay up.  Additionally, when you have a new version of a process that needs to get deployed, the worker process manager will gracefully shutdown  the processes, and spin up the new processes.  
 
 ++++
-<div class='mermaid'>
+<div class='mermaid process-manager'>
 	graph TB;
     subgraph ProcessManager
       WorkerProcess1
@@ -35,5 +35,30 @@ Someone needs to manage all these processes.  Starting them up and making sure t
     end
 </div>
 ++++
+
+== Worker Device
+Each device that you build and deploy runs a single worker process manager.  It is termed a Worker Device. Or usually we just call it a Worker for short.  The worker is the unit which hivewing manages in most cases.
+
+++++
+<div class='mermaid worker-device'>
+	graph TB;
+    subgraph Worker1
+      subgraph ProcessManager
+        WorkerProcess1
+        WorkerProcess2
+        WorkerProcessN
+      end
+    end
+    subgraph Worker2
+      subgraph ProcessManager
+        WorkerProcess1
+        WorkerProcess2
+        WorkerProcessN
+      end
+    end
+</div>
+++++
+
+
 
 
