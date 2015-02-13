@@ -1,2 +1,10 @@
 = Services
-:hb-tags: api, 
+:hp-tags: introduction, api, raspberry-pi, beaglebone, data collection, data processing
+
+Hivewing sets out to be the platform that you build your internet connected devices on.
+
+Handling all the details like getting data to and from each device, updating the code on those devices, and helping you debug those devices when things go wrong. Which we all think couldn't possibly happen, and yet, somehow, the real world sortof... gets in the way :)
+
+== Overview
+
+Hivewing exposes a number of services that you can use to manage your hive of workers.  They range from the obvious (a website) to things like git hosts and reverse tunnel hosting servers.  We can go over a few of them in high level detail, and then possibly 
