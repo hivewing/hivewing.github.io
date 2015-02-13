@@ -8,6 +8,12 @@ body>header,
 body.noimage {
     border-color: #00a67C;
 }
+nav {
+  display: block;
+  height: 50px;
+  position: relative;
+}
+
 .hivewing-navbar {
   background: #00a67C;
   line-height: 50px;
@@ -17,9 +23,8 @@ body.noimage {
   padding-left: 30px;
   position: absolute;
   height: 50px;
-  left: 0;
-  right: 0;
-  top: 0;
+  width: 100%;
+  max-width: 680px;
   margin-top: 0px;
 }
 
