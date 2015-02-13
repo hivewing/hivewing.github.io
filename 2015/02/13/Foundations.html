@@ -23,7 +23,7 @@
     <meta property="og:description" content="First off - Hubpages.io rocks, no? Hivewing.io is here to help with all the nittly grittly bits of deploying processes on devices and managing them remotely. We are a platform you build your product on top of.  Similar..." />
     <meta property="og:url" content="http://hivewing.github.io/2015/02/13/Foundations.html" />
     <meta property="article:published_time" content="2015-02-13T05:00:00.000Z" />
-    <meta property="article:modified_time" content="2015-02-13T14:55:42.584Z" />
+    <meta property="article:modified_time" content="2015-02-13T15:03:35.892Z" />
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Foundations" />
@@ -45,7 +45,7 @@
     "headline": "Foundations",
     "url": "http://hivewing.github.io/2015/02/13/Foundations.html",
     "datePublished": "2015-02-13T05:00:00.000Z",
-    "dateModified": "2015-02-13T14:55:42.584Z",
+    "dateModified": "2015-02-13T15:03:35.892Z",
     "description": "First off - Hubpages.io rocks, no? Hivewing.io is here to help with all the nittly grittly bits of deploying processes on devices and managing them remotely. We are a platform you build your product on top of.  Similar..."
 }
     </script>
@@ -117,12 +117,37 @@ graph TD;
 <div class="paragraph">
 <p>Someone needs to manage all these processes.  Starting them up and making sure they stay up.  Additionally, when you have a new version of a process that needs to get deployed, the worker process manager will gracefully shutdown  the processes, and spin up the new processes.</p>
 </div>
-<div class='mermaid'>
+<div class='mermaid process-manager'>
 	graph TB;
     subgraph ProcessManager
       WorkerProcess1
       WorkerProcess2
       WorkerProcessN
+    end
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_worker_device">Worker Device</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Each device that you build and deploy runs a single worker process manager.  It is termed a Worker Device. Or usually we just call it a Worker for short.  The worker is the unit which hivewing manages in most cases.</p>
+</div>
+<div class='mermaid worker-device'>
+	graph TB;
+    subgraph Worker1
+      subgraph ProcessManager
+        WorkerProcess1
+        WorkerProcess2
+        WorkerProcessN
+      end
+    end
+    subgraph Worker2
+      subgraph ProcessManager
+        WorkerProcess1
+        WorkerProcess2
+        WorkerProcessN
+      end
     end
 </div>
 </div>
