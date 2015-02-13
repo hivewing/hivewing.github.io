@@ -49,13 +49,6 @@ Each device that you build and deploy runs a single worker process manager.  It 
         WorkerProcess1.N
       end
     end
-    subgraph Worker2
-      subgraph ProcessManager2.1
-        WorkerProcess2.1
-        WorkerProcess2.2
-        WorkerProcess2.N
-      end
-    end
 </div>
 ++++
 
