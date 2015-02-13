@@ -15,10 +15,7 @@ It all starts here. Hivewing is built upon processes. Good ol' basic processes l
 
 So - here is a Process.  (your process to be precise)
 ++++
-<div class='mermaid'>
-graph TD;
-    WorkerProcess
-</div>
+<img src="https://docs.google.com/drawings/d/1cVgYxPc3-rkZEEqtzWcBxrtjKCi54mV8z9xeALuH5eU/pub?w=480&amp;h=360">
 ++++
 
 
