@@ -23,7 +23,7 @@ So - here is a Process.  (your process to be precise)
 Someone needs to manage all these processes.  Starting them up and making sure they stay up.  Additionally, when you have a new version of a process that needs to get deployed, the worker process manager will gracefully shutdown  the processes, and spin up the new processes.  
 
 ++++
-https://docs.google.com/drawings/d/1w2Pz9_yRzLSkqbdp7Gc_QPqMT2GwiqeIJDSRs9kdL68/pub?w=480&h=360
+<img src="https://docs.google.com/drawings/d/1w2Pz9_yRzLSkqbdp7Gc_QPqMT2GwiqeIJDSRs9kdL68/pub?w=480&h=360">
 ++++
 
 == Worker Device
