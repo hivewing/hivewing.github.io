@@ -60,7 +60,9 @@ I know it's long, but read on! Or at the very least just skip to the pictures.
 
 This is where things get interesting.  And the value of hivewing becomes more apparent.   
 
----
+++++
+<hr style='clear:both'>
+++++
 
 == Hive
 The next jump up is a hive.  This is a collection of workers which can be managed as a single entity.  Each worker in a hive is like all the others.  They run the same code and follow the same rules.  That collection of code is called a "hive image".  It is a git repository which contains all the binaries, supporting files, and how to run them all.
