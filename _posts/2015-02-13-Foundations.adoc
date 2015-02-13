@@ -42,13 +42,13 @@ Each device that you build and deploy runs a single worker process manager.  It 
 ++++
 <div class='mermaid worker-device'>
 	graph TB;
-    subgraph Worker1
+    Worker1
       subgraph ProcessManager1.1
         WorkerProcess1.1
         WorkerProcess1.2
         WorkerProcess1.N
       end
-    end
+
 </div>
 ++++
 
