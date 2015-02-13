@@ -22,14 +22,18 @@
     <meta property="og:site_name" content="Hivewing.io" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Foundations" />
-    <meta property="og:description" content="First off - Hubpages.io rocks, no? Hivewing.io is here to help with all the nittly grittly bits of deploying processes on devices and managing them remotely. We are a platform you build your product on top of.  Similar..." />
+    <meta property="og:description" content="Hivewing.io is here to help with all the nittly grittly bits of deploying processes on devices and managing them remotely. We are a platform you build your product on top of. Similar to AWS or Heroku, and even some..." />
     <meta property="og:url" content="http://hivewing.github.io/2015/02/13/Foundations.html" />
     <meta property="article:published_time" content="2015-02-13T05:00:00.000Z" />
-    <meta property="article:modified_time" content="2015-02-13T17:07:29.011Z" />
+    <meta property="article:modified_time" content="2015-02-13T17:27:46.094Z" />
+    <meta property="article:tag" content="embedded-devices" />
+    <meta property="article:tag" content="remote management" />
+    <meta property="article:tag" content="stay strong" />
+    <meta property="article:tag" content="hivewing" />
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Foundations" />
-    <meta name="twitter:description" content="First off - Hubpages.io rocks, no? Hivewing.io is here to help with all the nittly grittly bits of deploying processes on devices and managing them remotely. We are a platform you build your product on top of.  Similar..." />
+    <meta name="twitter:description" content="Hivewing.io is here to help with all the nittly grittly bits of deploying processes on devices and managing them remotely. We are a platform you build your product on top of. Similar to AWS or Heroku, and even some..." />
     <meta name="twitter:url" content="http://hivewing.github.io/2015/02/13/Foundations.html" />
     
     <script type="application/ld+json">
@@ -47,8 +51,9 @@
     "headline": "Foundations",
     "url": "http://hivewing.github.io/2015/02/13/Foundations.html",
     "datePublished": "2015-02-13T05:00:00.000Z",
-    "dateModified": "2015-02-13T17:07:29.011Z",
-    "description": "First off - Hubpages.io rocks, no? Hivewing.io is here to help with all the nittly grittly bits of deploying processes on devices and managing them remotely. We are a platform you build your product on top of.  Similar..."
+    "dateModified": "2015-02-13T17:27:46.094Z",
+    "keywords": "embedded-devices,  remote management,  stay strong,  hivewing",
+    "description": "Hivewing.io is here to help with all the nittly grittly bits of deploying processes on devices and managing them remotely. We are a platform you build your product on top of. Similar to AWS or Heroku, and even some..."
 }
     </script>
 
@@ -56,7 +61,7 @@
     <link rel="alternate" type="application/rss+xml" title="Hivewing.io" href="http://hivewing.github.io/rss" />
 </head>
 
-<body class="post-template  ">
+<body class="post-template tag-undefined tag-undefined tag-undefined tag-undefined  ">
     <nav >
       <div class="hivewing-navbar">
         <div class='hivewing-page-placeholder'>
@@ -82,13 +87,10 @@
             <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>First off - <a href="https://github.com/HubPress/hubpress.io">Hubpages.io</a> rocks, no?</p>
-</div>
-<div class="paragraph">
 <p>Hivewing.io is here to help with all the nittly grittly bits of deploying processes on devices and managing them remotely.</p>
 </div>
 <div class="paragraph">
-<p>We are a platform you build your product on top of.  Similar to AWS or Heroku, and even some similarity to AWS Elastic Beanstalk.  We can update binaries remotely, let you reverse tunnel things (like ssh), even do configuration and data collection. And since we&#8217;re a platform, if you only want some of the awesomeness - feel free to pick and choose what best suits your needs.</p>
+<p>We are a platform you build your product on top of. Similar to AWS or Heroku, and even some similarity to AWS Elastic Beanstalk. We can update binaries remotely, let you reverse tunnel things (like ssh), even do configuration and data collection. And since we’re a platform, if you only want some of the awesomeness - feel free to pick and choose what best suits your needs.</p>
 </div>
 </div>
 </div>
@@ -96,30 +98,27 @@
 <h2 id="_some_definitions">Some Definitions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>One can&#8217;t get too far down the road without laying a foundation.  As we have heard, it&#8217;s better to build upon a solid rock, than on shifting sand. So let us solidify what we&#8217;re talking about, ok?</p>
+<p>One can’t get too far down the road without laying a foundation. As we have heard, it’s better to build upon a solid rock, than on shifting sand. So let us solidify what we’re talking about, ok?</p>
 </div>
 <hr>
 <div class="sect2">
 <h3 id="_worker_process">Worker Process</h3>
 <div class="paragraph">
-<p>It all starts here. Hivewing is built upon processes. Good ol' basic processes like you would run from the command line.  We could have tried to abstract things a bit more - and had you run some javascript in our container, or maybe had you write some http server code.  But we like the foundation of managing processes.  When you write code to have it run on your distributed devices, the process is where it starts.  Hivewing is really an infrastructure to run (and keep running) processes on distributed hosts.  It adds on a lot of other helpful tools, but that is the core mission.</p>
+<p>It all starts here. Hivewing is built upon processes. Good ol' basic processes like you would run from the command line. We could have tried to abstract things a bit more - and had you run some javascript in our container, or maybe had you write some http server code. But we like the foundation of managing processes. When you write code to have it run on your distributed devices, the process is where it starts. Hivewing is really an infrastructure to run (and keep running) processes on distributed hosts. It adds on a lot of other helpful tools, but that is the core mission.</p>
 </div>
 <div class="paragraph">
-<p>So - here is a Process.  (your process to be precise)</p>
+<p>So - here is a Process. (your process to be precise).</p>
 </div>
 <img src="https://docs.google.com/drawings/d/1cVgYxPc3-rkZEEqtzWcBxrtjKCi54mV8z9xeALuH5eU/pub?w=680&amp;h=510">
 <hr>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_worker_process_manager">Worker Process Manager</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_worker_process_manager">Worker Process Manager</h3>
 <div class="paragraph">
-<p>Someone needs to manage all these processes.  Starting them up and making sure they stay up.  Additionally, when you have a new version of a process that needs to get deployed, the worker process manager will gracefully shutdown  the processes, and spin up the new processes.</p>
+<p>Someone needs to manage all these processes. Starting them up and making sure they stay up. Additionally, when you have a new version of a process that needs to get deployed, the worker process manager will gracefully shutdown the processes, and spin up the new processes.</p>
 </div>
 <div class="paragraph">
-<p>Each process has a way of interacting with the process manager.  It can:</p>
+<p>Each process has a way of interacting with the process manager. It can:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -137,72 +136,58 @@
 </li>
 </ul>
 </div>
-<img src="https://docs.google.com/drawings/d/1w2Pz9_yRzLSkqbdp7Gc_QPqMT2GwiqeIJDSRs9kdL68/pub?w=680&h=510">
+<img src="https://docs.google.com/drawings/d/1w2Pz9_yRzLSkqbdp7Gc_QPqMT2GwiqeIJDSRs9kdL68/pub?w=680&amp;h=510">
 <hr>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_worker_device">Worker Device</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_worker_device">Worker Device</h3>
 <div class="paragraph">
-<p>Each device that you build and deploy runs a single worker process manager.  Usually we just call the whole bundle a Worker for short.  The worker will route all of the event, log, data messages through to the hivewing system.  It keeps a local configuration</p>
+<p>Each device that you build and deploy runs a single worker process manager. Usually we just call the whole bundle a Worker for short. The worker will route all of the event, log, data messages through to the hivewing system. It keeps a local configuration</p>
 </div>
-<img src='https://docs.google.com/drawings/d/1FKWp8ZNQQ2nbMHLq3TdriBWzt9Vp6uucKX9ph-5G6I0/pub?w=680&h=510'>
+<img src="https://docs.google.com/drawings/d/1FKWp8ZNQQ2nbMHLq3TdriBWzt9Vp6uucKX9ph-5G6I0/pub?w=680&amp;h=510">
 <hr>
-<img style='float:right; margin-left: 15px; margin-bottom: 15px;' src='http://cdn.meme.am/instances/500x/59140151.jpg'>
+<img style="float:right; margin-left: 15px; margin-bottom: 15px;" src="http://cdn.meme.am/instances/500x/59140151.jpg">
 </div>
-</div>
-<div class="sect1">
-<h2 id="_keep_going">Keep going!</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_keep_going">Keep going!</h3>
 <div class="paragraph">
-<p>I know it&#8217;s long, but read on! Or at the very least just skip to the pictures.</p>
+<p>I know it’s long, but read on! Or at the very least just skip to the pictures.</p>
 </div>
 <div class="paragraph">
-<p>This is where things get interesting.  And the value of hivewing becomes more apparent.</p>
+<p>This is where things get interesting. And the value of hivewing becomes more apparent.</p>
 </div>
-<hr style='clear:both'>
+<hr style="clear:both">
 </div>
-</div>
-<div class="sect1">
-<h2 id="_hive">Hive</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_hive">Hive</h3>
 <div class="paragraph">
-<p>The next jump up is a hive.  This is a collection of workers which can be managed as a single entity.  Each worker in a hive is like all the others.  They run the same code and follow the same rules.  That collection of code is called a "hive image".  It is a git repository which contains all the binaries, supporting files, and how to run them all.</p>
+<p>The next jump up is a hive. This is a collection of workers which can be managed as a single entity. Each worker in a hive is like all the others. They run the same code and follow the same rules. That collection of code is called a "hive image". It is a git repository which contains all the binaries, supporting files, and how to run them all.</p>
 </div>
-<img src='https://docs.google.com/drawings/d/1konPFMbjZ5kGfbgqLdab3y1nAUj1qwJFLdfJp-IioJ4/pub?w=680&h=510'>
+<img src="https://docs.google.com/drawings/d/1konPFMbjZ5kGfbgqLdab3y1nAUj1qwJFLdfJp-IioJ4/pub?w=680&amp;h=510">
 <div class="paragraph">
-<p>Now - each worker still contains it&#8217;s own custom configuration.  The "hive image" just provides a common base to build upon.</p>
+<p>Now - each worker still contains it’s own custom configuration. The "hive image" just provides a common base to build upon.
+---
+=== Hive Image
+A hive image consists of a queenfile and all the other files needed to run whatever it is you wanted to run.</p>
 </div>
+<img src="https://docs.google.com/drawings/d/18gjpTh7z_ojOcmhDFVILvwMtoVrJLSGiKVxpFurOlzE/pub?w=680&amp;h=510">
 <hr>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_hive_image">Hive Image</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_hive_image_creation">Hive Image Creation</h3>
 <div class="paragraph">
-<p>A hive image consists of a queenfile and all the other files needed to run whatever it is you wanted to run.</p>
+<p>When you push code to hivewing, a new hive image is created, zipped, and sent to each of the workers. They are the impatient types, never waiting for holidays to arrive to open presents and that sort of thing, so - the minute they get a new image to run, they shutdown their processes, and start up the new ones. The grass is always greener for them I guess…</p>
 </div>
-<img src='https://docs.google.com/drawings/d/18gjpTh7z_ojOcmhDFVILvwMtoVrJLSGiKVxpFurOlzE/pub?w=680&h=510'>
+<div class="paragraph">
+<p>They do this work quickly. No waiting 15 minutes to figure out new code is available. With things happening so quickly, Hivewing even fits into your code, compile, test cycle.</p>
+</div>
 <hr>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_hive_image_creation">Hive Image Creation</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_finished">Finished!</h3>
 <div class="paragraph">
-<p>When you push code to hivewing, a new hive image is created, zipped, and sent to each of the workers.  They are the impatient types, never waiting for holidays to arrive to open presents and that sort of thing, so - the minute they get a new image to run, they shutdown their processes, and start up the new ones.  The grass is always greener for them I guess&#8230;&#8203;</p>
+<p>You made it through the foundations of Hivewing. Congratulations. Onto bigger and better things we go!</p>
 </div>
-<div class="paragraph">
-<p>They do this work quickly.  No waiting 15 minutes to figure out new code is available.  With things happening so quickly, Hivewing even fits into your code, compile, test cycle.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_finished">Finished!</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You made it through the foundations of Hivewing. Congratulations.  Onto bigger and better things we go!</p>
 </div>
 </div>
 </div>
