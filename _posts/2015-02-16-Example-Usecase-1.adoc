@@ -1,2 +1,67 @@
 = Example Usecase #1
+:hp-tags: hivewing.io, usecases, distributed, remote system, embedded device, programming, clojure
+
+So - the past two posts we have gone over some foundational definitions and things of that nature.  That is all in place so that now we can keep ourselves at a nicer level of abstraction when describing these workflows.
+
+== Temperature out of range?
+
+Ok! Now we get to create a made-up problem and solve it in an over-simplified way to illustrate how you might *start* to solve a real-life problem.  Here's our situation:
+
+[source]
+You are a high-yield chicken farmer.  You have coops full of chickens.  They usually can handle themselves all year round.  The only thing they have trouble with is their temperature.  When they get too hot (or too cold) you need to toggle the coop window open or closed.
+
+[source]
+
+You have 25 coops in 5 different locations.
+
+
+Simple huh?  You decide to solve this problem by using Beaglebone Blacks, connected to Hivewing.io!    
+
+== Set up the repository
+
+Each worker contains the following code:
+
+Queenfile
+[source,bash]
+temperature_grabber.sh
+
+temperature_grabber.sh
+[source,bash]
+#!/bin/bash 
+while [ true ] 
+do 
+echo "%%DATA temp: " `cat /dev/temp-sensor`
+sleep 30
+done
+
+window_opener.sh
+[source,bash]
+#1/bin/bash
+while [true]
+do
+	while read -r line; do
+	"1" > /dev/servo-sensor
+done <<EOF
+
+The simplicity of hivewing allows us to actually do all the scripting with bash.  No compilation or runtimes needed.
+
+== Set up the device
+
+== Register the device
+
+== Push first code revision
+* get the url from the web
+* get the public keys set up
+* push the code... and we're off!
+
+== Notice the data
+* we should notice that the data is coming through!
+* now we can test out the "SEND" events so that we can switch the state
+
+== We have more important things to do...
+* set up an alert for when the temp changes
+* email to you (or hipchat integration).
+
+
+
 
