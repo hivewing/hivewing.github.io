@@ -3,8 +3,36 @@
 
 Hivewing sets out to be the platform that you build your internet connected devices on.
 
-Handling all the details like getting data to and from each device, updating the code on those devices, and helping you debug those devices when things go wrong. Which we all think couldn't possibly happen, and yet, somehow, the real world sortof... gets in the way :)
+Handling all the details like getting data to and from each device, updating the code on those devices, and helping you debug those devices when things go wrong. Which we all know couldn't possibly happen, and yet, somehow, the real world sortof... gets in the way :)
 
 == Overview
 
-Hivewing exposes a number of services that you can use to manage your hive of workers.  They range from the obvious (a website) to things like git hosts and reverse tunnel hosting servers.  We can go over a few of them in high level detail, and then possibly 
+Hivewing exposes a number of services that you can use to manage your hive of workers.  They range from the obvious (a website) to things like git hosts and reverse tunnel hosting servers.  We can go over a few of them in high level detail, and then in future blog posts we will give you some concrete examples of how you might use them for your MillionDollarIdea™
+
+++++
+<img src="https://docs.google.com/drawings/d/1expcoQticAkoayDWekej9hVRMQbda0t9cX8-AZwptT0/pub?w=680&h=510">
+++++
+
+Notice that you are *happy* in the diagram.  You're happy because you get to use all these wonderful interfaces to manage your devices!  
+
+=== API
+The API is an interface that let's you manage all your workers.  Using an access token, you can get all the information hivewing has.  Some of the highlights:
+
+* get and set configurations on a particular worker
+** e.g. you might want to change an update rate for a single sensor
+** these changes are pushed real-time to the worker.
+* get recent data points
+** data points are emitted by the worker processes, and stored
+* send an event to a worker
+* get the logs from a worker
+* set up / manage data processing stages
+
+
+=== Web
+The web is the website, where you can basically do everything you can on the API, just has a slightly nicer presentation.  Your user accounts and logins and things are managed here. As are public-keys for git access.  Why would you need public-keys you ask? Well...
+
+=== Images
+This is the place you will push code to, in order to deploy to all the workers in your hive.  Using the web you can find out what repository to push to.  Once you have your files in order, git push them, and off the code goes!
+
+=== Porter
+Porter is the place which you and a device go to connect.  The worker device will expose his ports on the porter server, so going to p01.porter.hivewing.io:80 will redirect you to the appropriate port / host combination.  Making it easy to have a "static" public URL for your device's webpages or web services.
