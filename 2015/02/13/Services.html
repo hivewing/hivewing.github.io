@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Services</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="http://hivewing.github.io/themes/hivewing.io/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Dosis:400,700,400italic,700italic|Roboto+Slab:400italic,700italic,700,400">
+    <link rel="stylesheet" type="text/css" href="http://hivewing.github.io/themes/hivewing.io/assets/css/screen.css?v=1.0.0" />
+
+    <!--<script src='https://cdn.rawgit.com/knsv/mermaid/0.3.3/dist/mermaid.full.js'></script> -->
+
+    <link rel="canonical" href="http://hivewing.github.io/2015/02/13/Services.html" />
+    
+    <meta property="og:site_name" content="Hivewing.io" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Services" />
+    <meta property="og:description" content="Hivewing sets out to be the platform that you build your internet connected devices on. Handling all the details like getting data to and from each device, updating the code on those devices, and helping you debug those devices when..." />
+    <meta property="og:url" content="http://hivewing.github.io/2015/02/13/Services.html" />
+    <meta property="article:published_time" content="2015-02-13T05:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-02-16T19:11:03.531Z" />
+    <meta property="article:tag" content="introduction" />
+    <meta property="article:tag" content="api" />
+    <meta property="article:tag" content="raspberry-pi" />
+    <meta property="article:tag" content="beaglebone" />
+    <meta property="article:tag" content="data collection" />
+    <meta property="article:tag" content="data processing" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Services" />
+    <meta name="twitter:description" content="Hivewing sets out to be the platform that you build your internet connected devices on. Handling all the details like getting data to and from each device, updating the code on those devices, and helping you debug those devices when..." />
+    <meta name="twitter:url" content="http://hivewing.github.io/2015/02/13/Services.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Hivewing.io",
+    "author": {
+        "@type": "Person",
+        "name": "Cary FitzHugh",
+        "image": "https://avatars.githubusercontent.com/u/445848?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": ""
+    },
+    "headline": "Services",
+    "url": "http://hivewing.github.io/2015/02/13/Services.html",
+    "datePublished": "2015-02-13T05:00:00.000Z",
+    "dateModified": "2015-02-16T19:11:03.531Z",
+    "keywords": "introduction,  api,  raspberry-pi,  beaglebone,  data collection,  data processing",
+    "description": "Hivewing sets out to be the platform that you build your internet connected devices on. Handling all the details like getting data to and from each device, updating the code on those devices, and helping you debug those devices when..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Hivewing.io" href="http://hivewing.github.io/rss" />
+</head>
+
+<body class="post-template tag-undefined tag-undefined tag-undefined tag-undefined tag-undefined tag-undefined  ">
+    <nav >
+      <div class="hivewing-navbar">
+        <div class='hivewing-page-placeholder'>
+          <a class="navbar-brand" href="http://www.hivewing.io">
+            <span>Hivewing.io</span>
+            <div class="hexagon-xs">&nbsp;</div>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    
+
+
+    <article role="main" class="">
+        <header>
+            <a href="http://hivewing.github.io" id="home_link">«</a>
+            <div class="meta"><time datetime="2015-02-13"><a href="/2015/02/13/Services.html">February 13, 2015</a></time> <span class="count" id="js-reading-time"></span></div>
+            <h1>Services</h1>
+        </header>
+
+        <div class="text" id="js-post-content">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hivewing sets out to be the platform that you build your internet connected devices on.</p>
+</div>
+<div class="paragraph">
+<p>Handling all the details like getting data to and from each device, updating the code on those devices, and helping you debug those devices when things go wrong. Which we all know couldn&#8217;t possibly happen, and yet, somehow, the real world sortof&#8230;&#8203; gets in the way :)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview">Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hivewing exposes a number of services that you can use to manage your hive of workers.  They range from the obvious (a website) to things like git hosts and reverse tunnel hosting servers.  We can go over a few of them in high level detail, and then in future blog posts we will give you some concrete examples of how you might use them for your MillionDollarIdea™</p>
+</div>
+<img src="https://docs.google.com/drawings/d/1expcoQticAkoayDWekej9hVRMQbda0t9cX8-AZwptT0/pub?w=680&h=510">
+<div class="paragraph">
+<p>Notice that you are <strong>happy</strong> in the diagram.  You&#8217;re happy because you get to use all these wonderful interfaces to manage your devices!</p>
+</div>
+<div class="sect2">
+<h3 id="_api">API</h3>
+<div class="paragraph">
+<p>The API is an interface that let&#8217;s you manage all your workers.  Using an access token, you can get all the information hivewing has.  Some of the highlights:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>get and set configurations on a particular worker</p>
+<div class="ulist">
+<ul>
+<li>
+<p>e.g. you might want to change an update rate for a single sensor</p>
+</li>
+<li>
+<p>these changes are pushed real-time to the worker.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>get recent data points</p>
+<div class="ulist">
+<ul>
+<li>
+<p>data points are emitted by the worker processes, and stored</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>send an event to a worker</p>
+</li>
+<li>
+<p>get the logs from a worker</p>
+</li>
+<li>
+<p>set up / manage data processing stages</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_web">Web</h3>
+<div class="paragraph">
+<p>The web is the website, where you can basically do everything you can on the API, just has a slightly nicer presentation.  Your user accounts and logins and things are managed here. As are public-keys for git access.  Why would you need public-keys you ask? Well&#8230;&#8203;</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_images">Images</h3>
+<div class="paragraph">
+<p>This is the place you will push code to, in order to deploy to all the workers in your hive.  Using the web you can find out what repository to push to.  Once you have your files in order, git push them, and off the code goes!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_porter">Porter</h3>
+<div class="paragraph">
+<p>Porter is the place which you and a device go to connect.  The worker device will expose his ports on the porter server, so going to p01.porter.hivewing.io:80 will redirect you to the appropriate port / host combination.  Making it easy to have a "static" public URL for your device&#8217;s webpages or web services.</p>
+</div>
+</div>
+</div>
+</div>
+        </div>
+
+        <menu>
+            <a href="" id="btn_share" class="btn" title="Share">
+                <span aria-hidden="true" data-icon="S"></span>
+                <strong>Share</strong>
+            </a>
+            <a href="http://twitter.com/share?text=Services&url=http://hivewing.github.io/2015/02/13/Services.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
+                <span aria-hidden="true" data-icon="C"></span> Comment on Twitter
+            </a>
+        </menu>
+
+
+        <footer class="post-footer" role="contentinfo">
+
+            <div class="vcard">
+                <a href="http://hivewing.github.io/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
+                    <span aria-hidden="true" data-icon=")"></span>
+                    <strong>Feed</strong>
+                </a>
+
+                <a href="" class="photo">
+                    <span style="background-image: url('https://avatars.githubusercontent.com/u/445848?v=3');">
+                        <img src="https://avatars.githubusercontent.com/u/445848?v=3" alt="Cary FitzHugh">
+                    </span>
+                </a>
+
+                <div class="details">
+                    <h4><a href="" class="url n">Cary FitzHugh</a></h4>
+                    
+                    
+                </div>
+            </div>
+
+            <div id="user_bio">
+                <div class="inner">
+                    
+                </div>
+            </div>
+
+        </footer>
+
+
+
+
+    </article>
+
+    <div id="share_modal">
+        <div class="wrap">
+            <div class="inner">
+                <header>
+                    Share
+                    <a href="" class="close" title="Close">&times;</a>
+                </header>
+
+                <div class="roon-share-links">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true">Tweet</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+                    <div id="fb-elems">
+                        <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=463438580397968";
+                        fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                        <div class="fb-like" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false" data-font="arial"></div>
+                    </div>
+
+                    <div id="pinit-btn">
+                        <a href="//pinterest.com/pin/create/button/?url=http://hivewing.github.io/2015/02/13/Services.html&amp;description=Services-Hivewing.io " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
+                        <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+
+
+        function no_schema_links () {
+            var links = document.querySelectorAll('.js-remove-domain-schema');
+            if (links) {
+                for (i = 0; i < links.length; ++i) {
+                    var link = links[i],
+                        text = link.innerHTML,
+                        no_schema = text.replace(/.*?:\/\//g, "");
+                    link.innerHTML = no_schema;
+                }
+            }
+        }
+
+        window.onload = function () {
+            no_schema_links();
+
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script>
+
+
+
+
+</body>
+</html>
