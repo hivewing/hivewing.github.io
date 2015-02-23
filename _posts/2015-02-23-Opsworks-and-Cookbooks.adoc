@@ -1,0 +1,18 @@
+= Opsworks and Cookbooks
+:hp-tags: chef, opsworks
+
+I'm currently enjoying learning all about opsworks and chef.  One thing I just ran into was that I am apparently unable to use "-" in my recipe names on OpsWorks.
+
+When I try to "runCommand" for the stack, it tells me that my recipe name is invalid.  My recipe name is
+[code]
+  hivewing-sshd
+  
+Well - that stinks.  I guess I've become so used to clojure and saving my left pinky , I do dashes by default instead of underscores.
+
+I put in this just to test, and the client-side validator works. 
+[code]
+  hivewing_sshd
+
+
+
+Off to rename my cookbooks!
