@@ -1,0 +1,18 @@
+= Experiences With Clojure
+:hp-tags: clojure, ruby, rails, compojure, hiccup, SASS, Haml
+
+So I took the plunge.  I did what you aren't supposed to do - we built our startup on technology that I had never used before.  I had over 5 years of experience building a Rails app and associated backend services at www.ziplist.com (may it rest in peace).  When I first started RoR, I had no real point of reference. Well - I had done a few years of C/C++, Java, Lua, and a little bit of javascript.  Rails was a revelation!  It was a fun language that freed me from the memory nightmare of C, and the typingEverythingOverAndOverAgain of Java. It was magical.  And combine that with the ability to have someone lay out your application and tell you where things went (and they made reasonably good choices too!) - was refreshing.
+
+It was amazing - whereas a few months prior I had been wrestling with Makefiles and build systems - and now I was able to skip compiling altogether.  I could make a change in the running server code, refresh the page, and see what I wanted. Amazing!
+
+=== Honeymoon Period
+So the intro to interpreted languages continued for a few months.  It was exhilarating.  But - like most things that are "too good to be true" - life became more complicated when you have to deal with the messes you've made.  
+
+====== Memory Consumption
+
+====== Time To Spin Up All The Things
+At the beginning when compared to a compiled language, ruby and rails is great.  Because you are comparing a monolithic compilation step with a run step.  Additionally, your starting rails app is teeny-tiny.  
+
+
+====== Monkey Patching
+Not that it is dangerous, but redefining things and call chaining is TheWayToDoIt™ in Rails - or at least it was for a long time.
