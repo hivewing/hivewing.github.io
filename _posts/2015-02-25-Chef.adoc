@@ -1,0 +1,39 @@
+= Chef 	
+:hp-tags: chef, nginx, proxy, how-to, ops-works
+
+=== How To
+I took a while to wrap my head around chef.  And I am no where near done, but some things that I seem to have successfully figured out are how to set up a nginx reverse proxy via chef.
+
+
+=== Create a template
+This was so weird, I figured that in chef, you'd just be running the chef-nginx's templates to configure things. So I kept looking around for examples of how to "call" nginx's methods.
+
+I finally found one: "nginx_site".  I thought this is great, I'll just pass my data into that method and it'll create the site file for me.
+
+The docs seem to imply that could be the case, but the source code is suspiciously sparse for something that would be so complicated.  
+
+Turns out, all nginx_site does is enable / disable the site.  Or at least, that is all I could get it to do.
+
+I need to create my own template, and put all my own code in there to generate the sites-available file.  Then I can use nginx_site to enable / disable things.
+
+Oy
+
+http://leopard.in.ua/2013/01/05/chef-solo-getting-started-part-2/
+
+Go look at what he did with chef and nginx.  He has to create a template, then with the template chef method, put it in a specific place (though he does a good job, reading the nginx.dir from the node!).  Seems very... Loose to me.  But that is RealLife™ and chef is probably doing the best it can.
+
+=== Silly Optimistic Idealism
+
+I would say that something more functional and clojure-y would be my cup of tea.
+
+Maybe each "recipe" would simply be a function - that gets handed the current state of the system, and then it returns the desired current state of the system. 
+
+The clojure core code could diff those two and converge the system to where it needs to be.  There would need to be some core primitives, just like chef has, of packages, files, data, etc.   
+
+At least my head would wrap around that easier.  All this mutation, node.override, node.default, etc.  Feels like it could be simplified a great deal if we just skipped the mutation and the attempt at a fancy DSL.  
+
+Though, I hear puppet is driven by YML, maybe that is more like what I'm thinking.  Of course AWS OpsWorks is great, and so chef is my... "partner" at the moment.  :)
+
+Thanks!
+
+
