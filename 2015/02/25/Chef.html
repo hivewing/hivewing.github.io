@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Chef</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="http://hivewing.github.io/themes/hivewing.io/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Dosis:400,700,400italic,700italic|Roboto+Slab:400italic,700italic,700,400">
+    <link rel="stylesheet" type="text/css" href="http://hivewing.github.io/themes/hivewing.io/assets/css/screen.css?v=1.0.0" />
+
+    <!--<script src='https://cdn.rawgit.com/knsv/mermaid/0.3.3/dist/mermaid.full.js'></script> -->
+
+    <link rel="canonical" href="http://hivewing.github.io/2015/02/25/Chef.html" />
+    
+    <meta property="og:site_name" content="Hivewing.io" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Chef" />
+    <meta property="og:description" content="How To I took a while to wrap my head around chef.  And I am no where near done, but some things that I seem to have successfully figured out are how to set up a nginx reverse proxy via..." />
+    <meta property="og:url" content="http://hivewing.github.io/2015/02/25/Chef.html" />
+    <meta property="article:published_time" content="2015-02-25T05:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-02-25T15:45:16.295Z" />
+    <meta property="article:tag" content="chef" />
+    <meta property="article:tag" content="nginx" />
+    <meta property="article:tag" content="proxy" />
+    <meta property="article:tag" content="how-to" />
+    <meta property="article:tag" content="ops-works" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Chef" />
+    <meta name="twitter:description" content="How To I took a while to wrap my head around chef.  And I am no where near done, but some things that I seem to have successfully figured out are how to set up a nginx reverse proxy via..." />
+    <meta name="twitter:url" content="http://hivewing.github.io/2015/02/25/Chef.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Hivewing.io",
+    "author": {
+        "@type": "Person",
+        "name": "Cary FitzHugh",
+        "image": "https://avatars.githubusercontent.com/u/445848?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": ""
+    },
+    "headline": "Chef",
+    "url": "http://hivewing.github.io/2015/02/25/Chef.html",
+    "datePublished": "2015-02-25T05:00:00.000Z",
+    "dateModified": "2015-02-25T15:45:16.295Z",
+    "keywords": "chef,  nginx,  proxy,  how-to,  ops-works",
+    "description": "How To I took a while to wrap my head around chef.  And I am no where near done, but some things that I seem to have successfully figured out are how to set up a nginx reverse proxy via..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Hivewing.io" href="http://hivewing.github.io/rss" />
+</head>
+
+<body class="post-template tag-undefined tag-undefined tag-undefined tag-undefined tag-undefined  ">
+    <nav >
+      <div class="hivewing-navbar">
+        <div class='hivewing-page-placeholder'>
+          <a class="navbar-brand" href="http://www.hivewing.io">
+            <span>Hivewing.io</span>
+            <div class="hexagon-xs">&nbsp;</div>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    
+
+
+    <article role="main" class="">
+        <header>
+            <a href="http://hivewing.github.io" id="home_link">«</a>
+            <div class="meta"><time datetime="2015-02-25"><a href="/2015/02/25/Chef.html">February 25, 2015</a></time> <span class="count" id="js-reading-time"></span></div>
+            <h1>Chef</h1>
+        </header>
+
+        <div class="text" id="js-post-content">
+            <div class="sect2">
+<h3 id="_how_to">How To</h3>
+<div class="paragraph">
+<p>I took a while to wrap my head around chef.  And I am no where near done, but some things that I seem to have successfully figured out are how to set up a nginx reverse proxy via chef.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_create_a_template">Create a template</h3>
+<div class="paragraph">
+<p>This was so weird, I figured that in chef, you&#8217;d just be running the chef-nginx&#8217;s templates to configure things. So I kept looking around for examples of how to "call" nginx&#8217;s methods.</p>
+</div>
+<div class="paragraph">
+<p>I finally found one: "nginx_site".  I thought this is great, I&#8217;ll just pass my data into that method and it&#8217;ll create the site file for me.</p>
+</div>
+<div class="paragraph">
+<p>The docs seem to imply that could be the case, but the source code is suspiciously sparse for something that would be so complicated.</p>
+</div>
+<div class="paragraph">
+<p>Turns out, all nginx_site does is enable / disable the site.  Or at least, that is all I could get it to do.</p>
+</div>
+<div class="paragraph">
+<p>I need to create my own template, and put all my own code in there to generate the sites-available file.  Then I can use nginx_site to enable / disable things.</p>
+</div>
+<div class="paragraph">
+<p>Oy</p>
+</div>
+<div class="paragraph">
+<p><a href="http://leopard.in.ua/2013/01/05/chef-solo-getting-started-part-2/" class="bare">http://leopard.in.ua/2013/01/05/chef-solo-getting-started-part-2/</a></p>
+</div>
+<div class="paragraph">
+<p>Go look at what he did with chef and nginx.  He has to create a template, then with the template chef method, put it in a specific place (though he does a good job, reading the nginx.dir from the node!).  Seems very&#8230;&#8203; Loose to me.  But that is RealLife™ and chef is probably doing the best it can.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_silly_optimistic_idealism">Silly Optimistic Idealism</h3>
+<div class="paragraph">
+<p>I would say that something more functional and clojure-y would be my cup of tea.</p>
+</div>
+<div class="paragraph">
+<p>Maybe each "recipe" would simply be a function - that gets handed the current state of the system, and then it returns the desired current state of the system.</p>
+</div>
+<div class="paragraph">
+<p>The clojure core code could diff those two and converge the system to where it needs to be.  There would need to be some core primitives, just like chef has, of packages, files, data, etc.</p>
+</div>
+<div class="paragraph">
+<p>At least my head would wrap around that easier.  All this mutation, node.override, node.default, etc.  Feels like it could be simplified a great deal if we just skipped the mutation and the attempt at a fancy DSL.</p>
+</div>
+<div class="paragraph">
+<p>Though, I hear puppet is driven by YML, maybe that is more like what I&#8217;m thinking.  Of course AWS OpsWorks is great, and so chef is my&#8230;&#8203; "partner" at the moment.  :)</p>
+</div>
+<div class="paragraph">
+<p>Thanks!</p>
+</div>
+</div>
+        </div>
+
+        <menu>
+            <a href="" id="btn_share" class="btn" title="Share">
+                <span aria-hidden="true" data-icon="S"></span>
+                <strong>Share</strong>
+            </a>
+            <a href="http://twitter.com/share?text=Chef&url=http://hivewing.github.io/2015/02/25/Chef.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
+                <span aria-hidden="true" data-icon="C"></span> Comment on Twitter
+            </a>
+        </menu>
+
+
+        <footer class="post-footer" role="contentinfo">
+
+            <div class="vcard">
+                <a href="http://hivewing.github.io/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
+                    <span aria-hidden="true" data-icon=")"></span>
+                    <strong>Feed</strong>
+                </a>
+
+                <a href="" class="photo">
+                    <span style="background-image: url('https://avatars.githubusercontent.com/u/445848?v=3');">
+                        <img src="https://avatars.githubusercontent.com/u/445848?v=3" alt="Cary FitzHugh">
+                    </span>
+                </a>
+
+                <div class="details">
+                    <h4><a href="" class="url n">Cary FitzHugh</a></h4>
+                    
+                    
+                </div>
+            </div>
+
+            <div id="user_bio">
+                <div class="inner">
+                    
+                </div>
+            </div>
+
+        </footer>
+
+
+
+
+    </article>
+
+    <div id="share_modal">
+        <div class="wrap">
+            <div class="inner">
+                <header>
+                    Share
+                    <a href="" class="close" title="Close">&times;</a>
+                </header>
+
+                <div class="roon-share-links">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true">Tweet</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+                    <div id="fb-elems">
+                        <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=463438580397968";
+                        fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                        <div class="fb-like" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false" data-font="arial"></div>
+                    </div>
+
+                    <div id="pinit-btn">
+                        <a href="//pinterest.com/pin/create/button/?url=http://hivewing.github.io/2015/02/25/Chef.html&amp;description=Chef-Hivewing.io " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
+                        <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+
+
+        function no_schema_links () {
+            var links = document.querySelectorAll('.js-remove-domain-schema');
+            if (links) {
+                for (i = 0; i < links.length; ++i) {
+                    var link = links[i],
+                        text = link.innerHTML,
+                        no_schema = text.replace(/.*?:\/\//g, "");
+                    link.innerHTML = no_schema;
+                }
+            }
+        }
+
+        window.onload = function () {
+            no_schema_links();
+
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script>
+
+
+
+
+</body>
+</html>
