@@ -1,0 +1,40 @@
+= Phoenix Phase 1
+:hp-tags: clojure redo restart sadness joy clean-slate spike github.com
+
+== The Mire
+Stuck in the mud is how I'd describe it.  We had a grand plan.  But the wheels got wobbly and we laid it down for a few months.  So many things tripped us up.  I figure I'll review them here for my benefit (and maybe yours).
+
+=== AWS is cheap, until it isn't
+I love to tout the cost of AWS. I really like it.  For a business, it does save time and money (at least it has in our case with Ziplist.com and other projects.  I appreciate their tools and so we are "all-in" on AWS.  As we built our micro-services architecture, I kept making decisions to do things the "right way". Which usually meant splitting things into different services. We pretty soon got stuck into a cycle of:
+
+* Could we go live now?
+ ** Nope - we need this other service before that one will work.
+* Oh that service costs another $20 / mo.  We'll wait till later to set it up. 
+ ** Because if we set it up now, we're 3 months away from going to beta. And that's $60!
+* Ok, no deploy yet, I'll go build out another service...
+
+
+After 3 or 4 cycles of that, we had a system that was going to cost upwards of $250 / mo in a stable configuration.  That's not terrible. But on my tight-wad budgets (and with family) - it wasn't something I was willing to fund for a year.  We had started off with such a grand vision that we kept building things in the dev / docker environment.  Not going to "production" ... ever.  (Whatever production means in a pre-alpha system ...)
+
+Not only does this blow your wallet.  We found that it was discouraging too. We were pushing a huge amount of effort into the future.  It's all quite obvious now, but at the time, you'd just work on the "next available thing".  And the next thing was always something tractable (and one that didn't cost a bunch of $$.
+
+=== Make The Target Clear
+We had planned out lots of things. And we had lots of plans.  And we got pretty darn far. Things worked quite well in my dev encironment.  And everyone says "Keep your statup small".  I figured, we knew what we wanted to build, why not just build that?  No matter the size.  I think there are a few things involved here, that I didn't appeciate.
+
+* When it's not small, you lose mental momentum
+** It's not that you can't build it, but will you keep your motivation? You can do 2x the work when motivated, and you need to stay motivated.  Motivation isn't logical, it's emotional.  And so - you just have to work with it.  Big tasks are hard to stay motivated on, even though they are the same as 10 small tasks.  The small ones give you milestaones and accomplishment.  You need that.
+
+* When it's not small, you end up building more because the focus is off
+** Not that you are somehow building the "wrong" thing. Just not a focused thing.
+** An example - we were rethinking Hivewing and a comment came up to "imagine that $$ is 0 and time is infinite, what would you do differently? How would we structure the system?".  Everyone knows time isn't infinite.  But , redesigning the system cut out many servers and services (and features).  And the reason for us was we were asking the question "what can we do" as opposed to "what *should* we do".  As an engineer the "should"s in life really cause so much trouble...
+** Our focus was on the grand vision, not the nuts and bolts of just building what people could use. We were being a bit too artisic and not as pragmatic 
+
+=== No Budget == No Ideas
+When you don't really have a time / feature / $$ target. Everything is an option, and that is crippling.  Brilliance is often discovered when you have less time / $$ / features than you would like.  Our brains seem very good at creating boondoggles.  Without some real imposed constraints the system just drifts away into an aimless mess.  Instead of "good enough" you want "right".  
+
+I wonder sometimes if I was rich(er), how I would ever survive.  With the $$, I would probably do many silly things like repave my driveway every year b/c of cracks.  Or refinish my floors every month to get them shiny.  Maybe I'd have to buy a new car whenever mine got dirty.  Lots of silliness when I have to make do with what I've got, instead of dreaming of what "should" be.  
+
+So - for v2 we're really trying to keep our focus on that first goal. Get a product out there!
+
+== The good!
+So many good things occurred.  We basically "spiked" the entire system.  Even the futuristic ideas of data processing / data pipeline alerts was done.  We have so many bits and bobs and functions that do the hard and heavy lifting, that much of the re-launch is going to be repurposed code.  Added to that, I'm pretty fluent in clojure now!
