@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Phoenix Phase 1</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" type="image/png" href="//hivewing.github.io/themes/hivewing.io/assets/favicon.png?v=1.0.0">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Dosis:400,700,400italic,700italic|Roboto+Slab:400italic,700italic,700,400">
+    <link rel="stylesheet" type="text/css" href="//hivewing.github.io/themes/hivewing.io/assets/css/screen.css?v=1.0.0" />
+
+    <!--<script src='https://cdn.rawgit.com/knsv/mermaid/0.3.3/dist/mermaid.full.js'></script> -->
+
+    <link rel="canonical" href="https://hivewing.github.io/2015/04/22/Phoenix-Phase-1.html" />
+    
+    <meta property="og:site_name" content="Hivewing.io" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Phoenix Phase 1" />
+    <meta property="og:description" content="The Mire Stuck in the mud is how I&amp;#8217;d describe it.  We had a grand plan.  But the wheels got wobbly and we laid it down for a few months.  So many things tripped us up.  I figure..." />
+    <meta property="og:url" content="https://hivewing.github.io/2015/04/22/Phoenix-Phase-1.html" />
+    <meta property="article:published_time" content="2015-04-22T04:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-04-22T15:12:25.276Z" />
+    <meta property="article:tag" content="clojure redo restart sadness joy clean-slate spike github.com" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Phoenix Phase 1" />
+    <meta name="twitter:description" content="The Mire Stuck in the mud is how I&amp;#8217;d describe it.  We had a grand plan.  But the wheels got wobbly and we laid it down for a few months.  So many things tripped us up.  I figure..." />
+    <meta name="twitter:url" content="https://hivewing.github.io/2015/04/22/Phoenix-Phase-1.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Hivewing.io",
+    "author": {
+        "@type": "Person",
+        "name": "Cary FitzHugh",
+        "image": "https://avatars.githubusercontent.com/u/445848?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": ""
+    },
+    "headline": "Phoenix Phase 1",
+    "url": "https://hivewing.github.io/2015/04/22/Phoenix-Phase-1.html",
+    "datePublished": "2015-04-22T04:00:00.000Z",
+    "dateModified": "2015-04-22T15:12:25.276Z",
+    "keywords": "clojure redo restart sadness joy clean-slate spike github.com",
+    "description": "The Mire Stuck in the mud is how I&amp;#8217;d describe it.  We had a grand plan.  But the wheels got wobbly and we laid it down for a few months.  So many things tripped us up.  I figure..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Hivewing.io" href="https://hivewing.github.io/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+
+<body class="post-template tag-clojure-redo-restart-sadness-joy-clean-slate-spike-githubcom  noimage">
+    <nav >
+      <div class="hivewing-navbar">
+        <div class='hivewing-page-placeholder'>
+          <a class="navbar-brand" href="http://www.hivewing.io">
+            <span>Hivewing.io</span>
+            <div class="hexagon-xs">&nbsp;</div>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    
+
+
+    <article role="main" class="">
+        <header>
+            <a href="https://hivewing.github.io" id="home_link">«</a>
+            <div class="meta"><time datetime="2015-04-22"><a href="/2015/04/22/Phoenix-Phase-1.html">April 22, 2015</a></time> <span class="count" id="js-reading-time"></span></div>
+            <h1>Phoenix Phase 1</h1>
+        </header>
+
+        <div class="text" id="js-post-content">
+            <div class="sect1">
+<h2 id="_the_mire">The Mire</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Stuck in the mud is how I&#8217;d describe it.  We had a grand plan.  But the wheels got wobbly and we laid it down for a few months.  So many things tripped us up.  I figure I&#8217;ll review them here for my benefit (and maybe yours).</p>
+</div>
+<div class="sect2">
+<h3 id="_aws_is_cheap_until_it_isn_t">AWS is cheap, until it isn&#8217;t</h3>
+<div class="paragraph">
+<p>I love to tout the cost of AWS. I really like it.  For a business, it does save time and money (at least it has in our case with Ziplist.com and other projects.  I appreciate their tools and so we are "all-in" on AWS.  As we built our micro-services architecture, I kept making decisions to do things the "right way". Which usually meant splitting things into different services. We pretty soon got stuck into a cycle of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Could we go live now?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Nope - we need this other service before that one will work.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Oh that service costs another $20 / mo.  We&#8217;ll wait till later to set it up.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Because if we set it up now, we&#8217;re 3 months away from going to beta. And that&#8217;s $60!</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Ok, no deploy yet, I&#8217;ll go build out another service&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After 3 or 4 cycles of that, we had a system that was going to cost upwards of $250 / mo in a stable configuration.  That&#8217;s not terrible. But on my tight-wad budgets (and with family) - it wasn&#8217;t something I was willing to fund for a year.  We had started off with such a grand vision that we kept building things in the dev / docker environment.  Not going to "production" &#8230;&#8203; ever.  (Whatever production means in a pre-alpha system &#8230;&#8203;)</p>
+</div>
+<div class="paragraph">
+<p>Not only does this blow your wallet.  We found that it was discouraging too. We were pushing a huge amount of effort into the future.  It&#8217;s all quite obvious now, but at the time, you&#8217;d just work on the "next available thing".  And the next thing was always something tractable (and one that didn&#8217;t cost a bunch of $$.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_make_the_target_clear">Make The Target Clear</h3>
+<div class="paragraph">
+<p>We had planned out lots of things. And we had lots of plans.  And we got pretty darn far. Things worked quite well in my dev encironment.  And everyone says "Keep your statup small".  I figured, we knew what we wanted to build, why not just build that?  No matter the size.  I think there are a few things involved here, that I didn&#8217;t appeciate.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When it&#8217;s not small, you lose mental momentum</p>
+<div class="ulist">
+<ul>
+<li>
+<p>It&#8217;s not that you can&#8217;t build it, but will you keep your motivation? You can do 2x the work when motivated, and you need to stay motivated.  Motivation isn&#8217;t logical, it&#8217;s emotional.  And so - you just have to work with it.  Big tasks are hard to stay motivated on, even though they are the same as 10 small tasks.  The small ones give you milestaones and accomplishment.  You need that.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>When it&#8217;s not small, you end up building more because the focus is off</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Not that you are somehow building the "wrong" thing. Just not a focused thing.</p>
+</li>
+<li>
+<p>An example - we were rethinking Hivewing and a comment came up to "imagine that $$ is 0 and time is infinite, what would you do differently? How would we structure the system?".  Everyone knows time isn&#8217;t infinite.  But , redesigning the system cut out many servers and services (and features).  And the reason for us was we were asking the question "what can we do" as opposed to "what <strong>should</strong> we do".  As an engineer the "should"s in life really cause so much trouble&#8230;&#8203;</p>
+</li>
+<li>
+<p>Our focus was on the grand vision, not the nuts and bolts of just building what people could use. We were being a bit too artisic and not as pragmatic</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_no_budget_no_ideas">No Budget == No Ideas</h3>
+<div class="paragraph">
+<p>When you don&#8217;t really have a time / feature /  target. Everything is an option, and that is crippling.  Brilliance is often discovered when you have less time /  / features than you would like.  Our brains seem very good at creating boondoggles.  Without some real imposed constraints the system just drifts away into an aimless mess.  Instead of "good enough" you want "right".</p>
+</div>
+<div class="paragraph">
+<p>I wonder sometimes if I was rich(er), how I would ever survive.  With the $$, I would probably do many silly things like repave my driveway every year b/c of cracks.  Or refinish my floors every month to get them shiny.  Maybe I&#8217;d have to buy a new car whenever mine got dirty.  Lots of silliness when I have to make do with what I&#8217;ve got, instead of dreaming of what "should" be.</p>
+</div>
+<div class="paragraph">
+<p>So - for v2 we&#8217;re really trying to keep our focus on that first goal. Get a product out there!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_good">The good!</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>So many good things occurred.  We basically "spiked" the entire system.  Even the futuristic ideas of data processing / data pipeline alerts was done.  We have so many bits and bobs and functions that do the hard and heavy lifting, that much of the re-launch is going to be repurposed code.  Added to that, I&#8217;m pretty fluent in clojure now!</p>
+</div>
+</div>
+</div>
+        </div>
+
+        <menu>
+            <a href="" id="btn_share" class="btn" title="Share">
+                <span aria-hidden="true" data-icon="S"></span>
+                <strong>Share</strong>
+            </a>
+            <a href="http://twitter.com/share?text=Phoenix%20Phase%201&url=https://hivewing.github.io/2015/04/22/Phoenix-Phase-1.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
+                <span aria-hidden="true" data-icon="C"></span> Comment on Twitter
+            </a>
+        </menu>
+
+
+        <footer class="post-footer" role="contentinfo">
+
+            <div class="vcard">
+                <a href="https://hivewing.github.io/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
+                    <span aria-hidden="true" data-icon=")"></span>
+                    <strong>Feed</strong>
+                </a>
+
+                <a href="" class="photo">
+                    <span style="background-image: url('https://avatars.githubusercontent.com/u/445848?v=3');">
+                        <img src="https://avatars.githubusercontent.com/u/445848?v=3" alt="Cary FitzHugh">
+                    </span>
+                </a>
+
+                <div class="details">
+                    <h4><a href="" class="url n">Cary FitzHugh</a></h4>
+                    
+                    
+                </div>
+            </div>
+
+            <div id="user_bio">
+                <div class="inner">
+                    
+                </div>
+            </div>
+
+        </footer>
+
+
+
+
+    </article>
+
+    <div id="share_modal">
+        <div class="wrap">
+            <div class="inner">
+                <header>
+                    Share
+                    <a href="" class="close" title="Close">&times;</a>
+                </header>
+
+                <div class="roon-share-links">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true">Tweet</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+                    <div id="fb-elems">
+                        <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=463438580397968";
+                        fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                        <div class="fb-like" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false" data-font="arial"></div>
+                    </div>
+
+                    <div id="pinit-btn">
+                        <a href="//pinterest.com/pin/create/button/?url=https://hivewing.github.io/2015/04/22/Phoenix-Phase-1.html&amp;description=Phoenix%20Phase%201-Hivewing.io " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
+                        <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+
+            function get_text(el) {
+                ret = "";
+                var length = el.childNodes.length;
+                for(var i = 0; i < length; i++) {
+                    var node = el.childNodes[i];
+                    if(node.nodeType != 8) {
+                        ret += node.nodeType != 1 ? node.nodeValue : get_text(node);
+                    }
+                }
+                return ret;
+            }
+            function reading_time () {
+                var post_content = document.getElementById('js-post-content');
+                if (post_content) {
+                    var words = get_text(post_content),
+                        count = words.split(/\s+/).length,
+                        read_time = Math.ceil((count / 150)),
+                        read_time_node = document.createTextNode(read_time + ' min read');
+                    document.getElementById('js-reading-time').appendChild(read_time_node);
+                }
+            }
+
+        function no_schema_links () {
+            var links = document.querySelectorAll('.js-remove-domain-schema');
+            if (links) {
+                for (i = 0; i < links.length; ++i) {
+                    var link = links[i],
+                        text = link.innerHTML,
+                        no_schema = text.replace(/.*?:\/\//g, "");
+                    link.innerHTML = no_schema;
+                }
+            }
+        }
+
+        window.onload = function () {
+            no_schema_links();
+
+            reading_time();
+        }
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+        <script>
+            $(function(){
+                var share_modal = $("#share_modal"),
+                    update_social_links = true;
+
+                $("#btn_share").click(function(){
+                    var that = $(this);
+                    share_modal.fadeIn(200);
+                    return false;
+                });
+
+                share_modal.click(function(e){
+                    if (e.target.className == "wrap" || e.target.id == "share_modal") {
+                        share_modal.fadeOut(200);
+                    }
+                    return false;
+                });
+
+                share_modal.find("div.inner > header > a.close").click(function(){
+                    share_modal.fadeOut(200);
+                    return false;
+                });
+            });
+        </script>
+
+
+
+</body>
+</html>
